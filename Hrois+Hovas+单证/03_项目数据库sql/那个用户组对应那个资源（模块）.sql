@@ -1,15 +1,20 @@
-select d.* from RESOURCE_INFO a,role_resource b,role_group c,group_info d where 
+select a.* from RESOURCE_INFO a,role_resource b,role_group c,group_info d where 
 a.id = b.resource_id
 and b.role_id = c.role_id
 and c.group_id = d.id 
+and a.name like '¶©µ¥³öÔË%'
 
-and a.name like 'F-GAS%'
+select a.* from RESOURCE_INFO a,role_resource b,role_group c,group_info d where 
+a.id = b.resource_id
+and b.role_id = c.role_id
+and c.group_id = d.id 
+and a.name like 'HOPE%'
 
-select * from role_resource  where a.resource_id = '6525'
+select * from role_resource  where resource_id = '6645'
 
-select * from role_group  where b.role_id in ('2','1','7','8') 
+select * from role_group  where role_id in ('1') 
 
-select * from group_info  where c.id in ('2','1','7','8') 
+select * from group_info  where id in ('1') 
 
 
 select ug.*

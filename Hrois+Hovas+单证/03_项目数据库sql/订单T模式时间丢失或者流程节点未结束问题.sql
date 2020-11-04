@@ -8,13 +8,13 @@ SELECT CD.ACT_ID,
   FROM SO_ACT SO, CD_ACT_SET CD, USER_INFO EM
  WHERE SO.ACT_ID = CD.ACT_ID(+)
    AND SO.ACT_USER_ID = EM.EMP_CODE(+)
-   AND SO.ORDER_NUM = '0004306466'
-  -- AND CD.PAR_ROW = '0'
+   AND SO.ORDER_NUM = '0004394158'
+  --AND CD.PAR_ROW = '0'
  ORDER BY CD.Order_By
 
 
-select a.actual_finish_date,a.status_code
+select a.actual_finish_date,a.status_code£¬a.*
   from SO_ACT a
- where a.order_num = '0004306466'
-   and a.act_id = 'exportHGVS'
+ where a.order_num = '0004394158'
+  and a.act_id = 'businessManagerSalesOrder'
    for update

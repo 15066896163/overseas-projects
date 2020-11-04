@@ -1,9 +1,9 @@
 select *
   from cd_tmod_set
  where tmod_name = '内销标准订单T模式'
-and tmod_act_id = 'getNegoInfoFromHope'
+--and tmod_act_id = 'getNegoInfoFromHope'
    AND auto_flag = '1'
-   AND active_flag = '1' for update;
+   AND active_flag = '1' --for update;
    
    
    

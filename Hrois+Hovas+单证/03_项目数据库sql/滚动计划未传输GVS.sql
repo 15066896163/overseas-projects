@@ -1,11 +1,12 @@
---delete from aa_lin_temp
---select * from aa_lin_temp for update
+delete from aa_lin_temp
+select * from aa_lin_temp for update
 
 --P_ROLLPLAN_INSERT_GVS
 
-select cc.actual_quantity
+select *
   from SI_OES_ROLLPLAN cc
- where cc.roll_rate = to_date('2020-10-19', 'yyyy-mm-dd');
+ where cc.roll_rate = to_date('2020-10-26', 'yyyy-mm-dd')
+ and cc.actual_quantity !=0;
 
 update SI_OES_ROLLPLAN a
    set a.actual_quantity =

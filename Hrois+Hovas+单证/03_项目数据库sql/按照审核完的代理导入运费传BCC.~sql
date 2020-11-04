@@ -1,0 +1,4 @@
+select * from IF_BCC_FEE a where a.order_num in(
+'0004316649','0004316653'
+) and a.subject_name = '59' and a.sub_subject is null for update
+

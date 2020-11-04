@@ -17,8 +17,7 @@ SELECT *
  where t.ORDER_ITEM_ID in
        (SELECT t.ORDER_ITEM_ID
           from so_sales_order_item t
-         where --t.MATERIAL_CODE='B70TN1E8N';
-         t.order_code in ('0004271521'))
+         where t.order_code in ('0004271521'))
    for update;
 
 --已分备货单 但是无法查看
