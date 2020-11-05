@@ -8,16 +8,16 @@ select t.act_prepare_code, t.*
 
 
 --已分备货单，需要删除
-SELECT *
+SELECT t.*,t.rowid
   from act_prepare_order t
- where t.ORDER_NUM in ('0004271520') for update;
+ where t.ORDER_NUM in ('0004322529');
 
 SELECT *
   from ACT_PREPARE_ORDER_ITEM t
  where t.ORDER_ITEM_ID in
        (SELECT t.ORDER_ITEM_ID
           from so_sales_order_item t
-         where t.order_code in ('0004271521'))
+         where t.order_code in ('0004322529'))
    for update;
 
 --已分备货单 但是无法查看
@@ -27,3 +27,9 @@ SELECT ttt.order_code, t.*
    and t.act_prepare_order_code not in
        (SELECT tt.act_prepare_code from act_prepare_order tt)
    and t.created >= to_date('2020-08-24', 'yyyy-mm-dd');
+   
+   
+select t.*, t.rowid
+  from SI_HGVS_PO_TRACK t
+ where t.material_code = 'BH0360E6Z'
+   and t.prepare_code = 'B0120BH06510GB' ; 
